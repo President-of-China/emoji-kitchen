@@ -23,12 +23,12 @@
   "devDependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.2",
-    "@mui/lab": "^5.0.0-alpha.158",
-    "@mui/material": "^5.15.2",
+    "@mui/icons-material": "^5.15.3",
+    "@mui/lab": "^5.0.0-alpha.159",
+    "@mui/material": "^5.15.3",
     "@primer/octicons-react": "^19.8.0",
     "@types/file-saver": "^2.0.7",
-    "@types/react": "^18.2.45",
+    "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "@types/uuid": "^9.0.7",
     "@uidotdev/usehooks": "^2.4.1",
@@ -40,7 +40,7 @@
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3",
     "uuid": "^9.0.1",
-    "vite": "^5.0.10",
-    "vite-tsconfig-paths": "^4.2.2"
+    "vite": "^5.0.11",
+    "vite-tsconfig-paths": "^4.2.3"
   }
 }
