@@ -1,4 +1,4 @@
-import emojiMetadata from "https://raw.githubusercontent.com/xsalazar/emoji-kitchen-backend/main/app/metadata.json";
+import emojiMetadata from "./metadata.json";
 import { EmojiData, EmojiMetadata } from "./types";
 
 /**
