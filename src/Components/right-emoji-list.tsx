@@ -3,15 +3,15 @@ import { getEmojiData, getNotoEmojiUrl, getSupportedEmoji } from "./utils";
 import { ImageListItem } from "@mui/material";
 
 export default function RightEmojiList({
+  handleRightEmojiClicked,
   rightSearchResults,
   selectedLeftEmoji,
   selectedRightEmoji,
-  handleRightEmojiClicked,
 }: {
+  handleRightEmojiClicked: Dispatch<string>;
   rightSearchResults: Array<string>;
   selectedLeftEmoji: string;
   selectedRightEmoji: string;
-  handleRightEmojiClicked: Dispatch<string>;
 }) {
   var knownSupportedEmoji = getSupportedEmoji();
   var hasSelectedLeftEmoji = selectedLeftEmoji !== "";
@@ -42,7 +42,7 @@ export default function RightEmojiList({
     return (
       <div key={data.alt}>
         <ImageListItem
-          onClick={(event) =>
+          onClick={(_) =>
             hasSelectedLeftEmoji && isValidCombo
               ? handleRightEmojiClicked(emojiCodepoint)
               : null
@@ -50,7 +50,7 @@ export default function RightEmojiList({
           sx={{
             p: 0.5,
             borderRadius: 2,
-            opacity: (theme) => {
+            opacity: (_) => {
               if (!hasSelectedLeftEmoji) {
                 return 0.1;
               }

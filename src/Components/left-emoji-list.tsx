@@ -3,15 +3,15 @@ import { getEmojiData, getNotoEmojiUrl, getSupportedEmoji } from "./utils";
 import { ImageListItem } from "@mui/material";
 
 export default function LeftEmojiList({
-  leftSearchResults,
-  selectedLeftEmoji,
   handleLeftEmojiClicked,
   handleBulkImageDownloadMenuOpen,
+  leftSearchResults,
+  selectedLeftEmoji,
 }: {
-  leftSearchResults: Array<string>;
-  selectedLeftEmoji: string;
   handleLeftEmojiClicked: Dispatch<string>;
   handleBulkImageDownloadMenuOpen: Dispatch<React.MouseEvent>;
+  leftSearchResults: Array<string>;
+  selectedLeftEmoji: string;
 }) {
   var knownSupportedEmoji = getSupportedEmoji();
 
@@ -29,22 +29,29 @@ export default function LeftEmojiList({
       <div
         key={data.alt}
         onContextMenu={
-          selectedLeftEmoji === data.emojiCodepoint
+          selectedLeftEmoji === emojiCodepoint
             ? handleBulkImageDownloadMenuOpen
             : () => {}
         }
       >
         <ImageListItem
-          onClick={(event) => handleLeftEmojiClicked(emojiCodepoint)}
+          onClick={(_) => {
+            handleLeftEmojiClicked(emojiCodepoint);
+          }}
           sx={{
             p: 0.5,
             borderRadius: 2,
+            opacity: (_) => {
+              return 1;
+            },
             backgroundColor: (theme) =>
-              selectedLeftEmoji === data.emojiCodepoint
+              selectedLeftEmoji === emojiCodepoint
                 ? theme.palette.action.selected
                 : theme.palette.background.default,
             "&:hover": {
-              backgroundColor: (theme) => theme.palette.action.hover,
+              backgroundColor: (theme) => {
+                return theme.palette.action.hover;
+              },
             },
           }}
         >
@@ -53,7 +60,7 @@ export default function LeftEmojiList({
             width="32px"
             height="32px"
             alt={data.alt}
-            src={getNotoEmojiUrl(data.emojiCodepoint)}
+            src={getNotoEmojiUrl(emojiCodepoint)}
           />
         </ImageListItem>
       </div>
